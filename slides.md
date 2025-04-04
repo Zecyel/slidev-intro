@@ -35,6 +35,33 @@ layout: intro
 class: mx-10
 ---
 
+# Zecyel {.font-mono.text-primary}
+
+<div class="leading-8 opacity-80">
+Slidev 团队成员 <br>
+FDU 本科 2023级 计算机专业
+</div>
+
+<div my-16 w-min grid="~ cols-[40px_1fr] gap-y4" items-center justify-center ml--3>
+  <div i-ri-github-line op50 ma text-xl/>
+  <div><a href="https://github.com/zecyel" target="_blank">github.com/Zecyel</a></div>
+  <div i-fa6-brands-microblog op50 ma text-xl/>
+  <div><a href="http://doc.zecyel.xyz" target="_blank">doc.zecyel.xyz</a></div>
+  
+</div>
+
+<img src="./assets/avatar_zecyel.jpg" rounded-full w-46 abs-tr mt-24 mr-48/>
+
+<div flex="~ gap2">
+
+</div>
+
+---
+transition: fade-out
+layout: intro
+class: mx-10
+---
+
 # \_Kerman {.font-mono.text-primary}
 
 <div class="leading-8 opacity-80">
@@ -51,7 +78,7 @@ USTC 本科 2023级
   <div><a href="https://bsky.app/profile/kermanx.github.io" target="_blank">bsky.app/profile/KermanX.github.io</a></div>
 </div>
 
-<img src="./assets/avatar.jpg" rounded-full w-46 abs-tr mt-24 mr-48/>
+<img src="./assets/avatar_kermanx.jpg" rounded-full w-46 abs-tr mt-24 mr-48/>
 
 <div flex="~ gap2">
 
@@ -193,7 +220,7 @@ transition: slide-left
 
 <!-- <iframe v-click fixed right-0 w-120 h-68 top-30  src="https://sli.dev" ></iframe> -->
 
-<iframe fixed right-10 w-120 h-68 top-30 bottom-0  src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=hCnWGH-S8ML-hjau" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe v-click fixed right-10 w-120 h-68 top-30 bottom-0  src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=hCnWGH-S8ML-hjau" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 transition: fade-out
@@ -288,7 +315,7 @@ transition: fade-out
 
 #### 假设：
 
-- 学生 (USTC)
+- 学生 (FDU)
 - 没有/几乎没有 JavaScript / HTML / CSS 经验
 
 <div h-2 />
@@ -642,30 +669,6 @@ CSS 和 UnoCSS 提供更多的样式选择
 
 ---
 
-# 声明式 CSS
-
-当然，我们也可以使用普通的 CSS
-
-- 全局 CSS: `./style.css`
-- 每个幻灯片的专属 CSS: `style` 标签：
-
-```vue
-# My slide
-
-<style>
-h1 {
-  color: red;
-  // Or: @apply text-red;
-}
-</style>
-
----
-
-# This won't be red
-```
-
----
-
 # 常用布局
 
 基于 Web 的幻灯片有更多的布局选择
@@ -824,6 +827,18 @@ layout: intro
 `Headmatter` 和 `Frontmatter` 都是可选的
 
 </div>
+
+---
+
+# 配置幻灯片
+
+为幻灯片添加属性！
+
+<div h-5 />
+
+让我们看一个真实的例子！
+
+[This Slides](https://github.com/Zecyel/slidev-intro/blob/main/slides.md?plain=1)
 
 ---
 
@@ -1221,7 +1236,12 @@ layout: section
 
 ---
 
-# 演示
+# 演示 与 导出
+
+<div h-5 />
+
+<div grid grid-cols-2 gap-10 mb-12>
+<div>
 
 - Option 1: **投屏 / HDMI**
     - 我的首选
@@ -1229,7 +1249,10 @@ layout: section
 - Option 2: **局域网**
     - 你的电脑启动 `npm run dev --remote`，目标设备访问该地址
     - 不同设备，演讲者可以看演讲者视图，进度和绘图同步
-    - 科大好像不支持
+    ![dev](./assets/dev.png){.w80}
+
+</div>
+<div>
 
 - Option 3: **导出到 PPTX / PDF**
     - 丧失交互性
@@ -1239,6 +1262,9 @@ layout: section
     - 任何时候都可以访问
     - 无法同步进度和绘图
 
+</div>
+</div>
+
 <style>
 li p {
   @apply mb-0 mt-0;
@@ -1247,35 +1273,6 @@ li {
   @apply !leading-8.5;
 }
 </style>
-
----
-
-# 导出
-
-<div relative v-mark.cross.red>
-
-```bash
-npm run export --format pdf
-npm run export --format pptx
-npm run export --format png
-```
-
-会有提示要求你安装 Playwright，可能面临网络问题
-
-PPTX 是一堆图片
-
-导出有很多有用的选项，参见我们的文档
-
-<div v-click="1" absolute inset-0 bg="#121212 op-80" />
-</div>
-
-<div v-after text-2xl text-center mt-16>
-
-即将推出更易用、更稳定的导出方式，敬请期待！
-
-[(前几天才想到思路，来不及写完了😇)]{.op-90.text-lg}
-
-</div>
 
 ---
 
@@ -1325,17 +1322,6 @@ npm run build --base /folder/
 
 ---
 
-# 网络问题
-
-<div />
-
-- 代理
-- 换源
-- PNPM
-- GitHub Codespaces
-
----
-
 # 一些提示
 
 <div />
@@ -1380,109 +1366,6 @@ li {
   @apply leading-10 text-xl;
 }
 </style>
-
----
-layout: section
----
-
-## 题外话
-
-# TypeScript 开源社区
-
----
-
-# 什么是开源
-
-<div />
-
-<v-clicks>
-
-- 字面意思：开放源代码
-
-- 做慈善？/ 另一种商业模式？/ 玩？
-
-- <span text-2xl> **开源是一种礼物<div h-2/>互惠不是目的** </span>
-
-</v-clicks>
-
-<div v-after>
-
-<div v-drag="[478,201,480,311]">
-<div text-blue>
-https://talks.antfu.me/2024/vueconf-shenzhen/3
-</div>
-<h2>Yak Shaving <span op50 font-serif italic mb--1 text-26px> by Anthony Fu </span></h2>
-<img src="./assets/yakshaving.png" rounded-lg shadow-xl w-120 border="~ gray/25" mt-1 />
-</div>
-</div>
-
----
-
-# 开源世界里不同的社区
-
-<div />
-
-- Linux 为代表的社区和 TypeScript 社区
-    - 有相似之处
-    - 成员上几乎没有交集
-    - 有很多不同
-
-- TypeScript / JavaScript 的特性
-    - 脚本语言，更加难闭源
-    - 大多数代码用于编写 UI，没必要隐藏代码
-    - Web 世界开放共享的文化
-    - “顺手就开源了” / “开源了没坏处” （当然，公开代码 ≠ 维护项目）
-
----
-
-# 我参与开源的一年
-
-<div />
-
-- 第一次使用 Slidev 是在初中，那时 Slidev 刚发布不久，非常火爆
-
-- 今年二月提交了第一个 PR，随后加入了 Slidev 团队
-
-- 修复 bug、添加功能、重构代码、回答社区里的问题
-
-- 甚至修复了一个我初中就碰到的 bug（很有趣的经历）
-
-- 为 Slidev 编写 VSCode 拓展时，想到去开发 reactive-vscode 这个库
-
-- 以此为契机，结识了很多朋友，包括 Slidev 的作者 Anthony Fu
-
-- 参加了 VueConf 2024，Rolldown 团队成员告诉我 “Rust 不难”
-
-- 于是第三次入门 Rust，终于入门成功
-
----
-
-# 一些信息
-
-<div />
-
-1. 开源是一种礼物。不要功利地看待，但坚信它对你的价值
-
-2. 如果你想参与开源，JavaScript / TypeScript 社区是一个很好的起点
-
-    - 门槛不高
-    - 社区活跃
-    - 华人参与度不错
-
-3. 参与开源可能需要一个契机。从你的需求出发，找到一个感兴趣的项目
-
----
-
-# 其他感想
-
-<div />
-
-1. GitHub 上的星星数只能作相对比较，不能作绝对比较
-
-2. 那面绿墙只能说明这位用户是否还在使用 GitHub
-
-3. 使用英文和 minimal reproduction
-
 ---
 layout: end
 ---
