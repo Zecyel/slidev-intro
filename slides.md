@@ -1353,7 +1353,8 @@ npm run build --base /folder/
 - <carbon-earth-europe-africa-filled /> Website: https://sli.dev <div h-2/>
 - <carbon-logo-github /> GitHub: https://github.com/slidevjs/slidev <div h-2/>
 - <carbon-logo-discord /> Discord: https://chat.sli.dev <div h-2/>
-- <cib-tencent-qq /> QQ Group: <span font-mono text-blue2>978643067</span>
+- <cib-tencent-qq /> QQ Group: <span font-mono text-blue2>978643067</span> <div h-2 />
+- <cib-tencent-qq /> CSLG QQ Group: <span font-mono text-blue2>926958092</span>
 
 <img src="./assets/qqgroup.jpg" rounded-xl v-drag="[607,100,305,NaN]" />
 
